@@ -22,3 +22,8 @@ const RhombusBtn = document.getElementById("rhombusBtn");
 const PentagonP = document.getElementById("pentagonP").value;
 const PentagonB = document.getElementById("pentagonB").value;
 const PentagonBtn = document.getElementById("pentagonBtn");
+
+// step-6: Ellipse value
+const EllipseA = document.getElementById("ellipseA").value;
+const EllipseB = document.getElementById("ellipseB").value;
+const EllipseBtn = document.getElementById("ellipseBtn");
