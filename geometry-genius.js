@@ -17,3 +17,8 @@ const ParallelogramBtn = document.getElementById("parallelogramBtn");
 const RhombusD1 = document.getElementById("rhombusD1").value;
 const RhombusD2 = document.getElementById("rhombusD2").value;
 const RhombusBtn = document.getElementById("rhombusBtn");
+
+// step-5:Pentagon value
+const PentagonP = document.getElementById("pentagonP").value;
+const PentagonB = document.getElementById("pentagonB").value;
+const PentagonBtn = document.getElementById("pentagonBtn");
