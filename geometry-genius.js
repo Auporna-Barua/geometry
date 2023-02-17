@@ -7,3 +7,8 @@ const TriangleBtn = document.getElementById("triangleBtn");
 const RectangleWidth = document.getElementById("rectangleWidth").value;
 const RectangleLand = document.getElementById("rectangleLand").value;
 const RectangleBtn = document.getElementById("rectangleBtn");
+
+// step-3:parallelogram value
+const ParallelogramBase = document.getElementById("parallelogramBase").value;
+const ParallelogramHeight = document.getElementById("parallelogramHeight").value;
+const ParallelogramBtn = document.getElementById("parallelogramBtn");
