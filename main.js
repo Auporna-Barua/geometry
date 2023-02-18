@@ -1,8 +1,14 @@
-let i = 1;
-const li = document.createElement("li");
-li.classList =
-  "list-group-item d-flex justify-content-between align-items-start gap-2";
 
+
+// common function for tringle and Pentagon
+function validationGeomaetry(num1, num2) {
+  if (isNaN(num1) || isNaN(num2) || num1 < 1 || num2 < 1) {
+    return alert("Input is required, must be a positve number");
+  } else {
+    const area = (0.5 * num1 * num2).toFixed(2);
+    return area;
+  }
+}
 // step-1: Triangle value
 
 document.getElementById("triangleBtn").addEventListener("click", function () {
@@ -11,23 +17,21 @@ document.getElementById("triangleBtn").addEventListener("click", function () {
   const triangleHeight = document.getElementById("triangleHeight").value;
   const triangleHeightParse = parseFloat(triangleHeight);
 
-  if (
-    isNaN(triangleBaseParse) ||
-    isNaN(triangleHeightParse) ||
-    triangleBase < 1 ||
-    triangleHeight < 1
-  ) {
-    alert("Input is required, must be a positve number");
-  } else {
-    const triangleArea = (0.5 * triangleBaseParse * triangleHeightParse).toFixed(2);
-    const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Triangle</div>
+  const triangleArea = validationGeomaetry(
+    triangleBaseParse,
+    triangleHeightParse
+  );
+  console.log(triangleArea);
+  const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Triangle</div>
                 <div>${triangleArea}cm<sup>2</sup></div>
                 <button class="btn btn-primary btn-sm">
                   Convert to m <sup>2</sup>
                 </button> </li>`;
-
+  if (triangleArea) {
     document.getElementById("resultShow").innerHTML += text;
   }
+
+  // }
 });
 
 // step-2: Rectangle value
@@ -81,7 +85,13 @@ document
       const parallelogramArea = (
         parallelogramBaseParse * parallelogramHeightParse
       ).toFixed(2);
-      console.log(parallelogramArea);
+      const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Parallelogram</div>
+                <div>${parallelogramArea}cm<sup>2</sup></div>
+                <button class="btn btn-primary btn-sm">
+                  Convert to m <sup>2</sup>
+                </button> </li>`;
+
+      document.getElementById("resultShow").innerHTML += text;
     }
   });
 
@@ -101,7 +111,13 @@ document.getElementById("rhombusBtn").addEventListener("click", function () {
     alert("Input is required, must be a positve number");
   } else {
     const rhombusArea = (0.5 * rhombusD1Parse * rhombusD2Parse).toFixed(2);
-    // console.log(rhombusArea);
+    const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Rhombus</div>
+                <div>${rhombusArea}cm<sup>2</sup></div>
+                <button class="btn btn-primary btn-sm">
+                  Convert to m <sup>2</sup>
+                </button> </li>`;
+
+    document.getElementById("resultShow").innerHTML += text;
   }
 });
 
@@ -112,17 +128,14 @@ document.getElementById("pentagonBtn").addEventListener("click", function () {
   const PentagonB = document.getElementById("pentagonB").value;
   const PentagonBParse = parseFloat(PentagonB);
 
-  if (
-    isNaN(PentagonPParse) ||
-    isNaN(PentagonBParse) ||
-    PentagonP < 1 ||
-    PentagonB < 1
-  ) {
-    alert("Input is required, must be a positve number");
-  } else {
-    const PentagonArea = (0.5 * PentagonPParse * PentagonBParse).toFixed(2);
-    //  console.log(PentagonArea);
-  }
+  const pentagonArea = validationGeomaetry(PentagonBParse, PentagonPParse);
+  const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Pentagon</div>
+                <div>${pentagonArea}cm<sup>2</sup></div>
+                <button class="btn btn-primary btn-sm">
+                  Convert to m <sup>2</sup>
+                </button> </li>`;
+
+  document.getElementById("resultShow").innerHTML += text;
 });
 
 // step-6: Ellipse value
@@ -141,6 +154,12 @@ document.getElementById("ellipseBtn").addEventListener("click", function () {
     alert("Input is required, must be a positve number");
   } else {
     const ellipseArea = (3.1416 * ellipseAParse * ellipseBParse).toFixed(2);
-    console.log(ellipseArea);
+    const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Elipse</div>
+                <div>${ellipseArea}cm<sup>2</sup></div>
+                <button class="btn btn-primary btn-sm">
+                  Convert to m <sup>2</sup>
+                </button> </li>`;
+
+    document.getElementById("resultShow").innerHTML += text;
   }
 });
