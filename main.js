@@ -41,8 +41,7 @@ document.getElementById("rectangleBtn").addEventListener("click", function () {
 });
 
 // step-3: Parallelogram value
-document
-  .getElementById("parallelogramBtn").addEventListener("click", function () {
+document.getElementById("parallelogramBtn").addEventListener("click", function () {
     const parallelogramBase = document.getElementById("parallelogramBase").value;
     const parallelogramBaseParse = parseFloat(parallelogramBase);
     const parallelogramHeight = document.getElementById(
@@ -66,9 +65,25 @@ document
   });
 
 // step-4: Rhombus value
-const RhombusD1 = document.getElementById("rhombusD1").value;
-const RhombusD2 = document.getElementById("rhombusD2").value;
-const RhombusBtn = document.getElementById("rhombusBtn");
+document.getElementById("rhombusBtn").addEventListener("click", function () {
+  const rhombusD1 = document.getElementById("rhombusD1").value;
+    const rhombusD1Parse = parseFloat(rhombusD1);
+  const rhombusD2 = document.getElementById("rhombusD2").value;
+  const rhombusD2Parse = parseFloat(rhombusD2);
+  
+  if (
+    isNaN(rhombusD1Parse) ||
+    isNaN(rhombusD2Parse) ||
+    rhombusD1 < 1 ||
+    rhombusD2 < 1
+  ) {
+    alert("Input is required, must be a positve number");
+  } else {
+    const rhombusArea = 0.5 * rhombusD1Parse * rhombusD2Parse;
+    console.log(rhombusArea);
+  }
+  
+});
 
 // step-5: Pentagon value
 const PentagonP = document.getElementById("pentagonP").value;
