@@ -1,3 +1,4 @@
+let i = 1;
 const li = document.createElement("li");
 li.classList =
   "list-group-item d-flex justify-content-between align-items-start gap-2";
@@ -18,14 +19,14 @@ document.getElementById("triangleBtn").addEventListener("click", function () {
   ) {
     alert("Input is required, must be a positve number");
   } else {
-    const triangleArea = 0.5 * triangleBaseParse * triangleHeightParse;
-    const text = ` <div class="ms-2 me-auto">Triangle</div>
+    const triangleArea = (0.5 * triangleBaseParse * triangleHeightParse).toFixed(2);
+    const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Triangle</div>
                 <div>${triangleArea}cm<sup>2</sup></div>
                 <button class="btn btn-primary btn-sm">
                   Convert to m <sup>2</sup>
-                </button>`;
-    li.innerHTML = text;
-    document.getElementById("resultShow").appendChild(li);
+                </button> </li>`;
+
+    document.getElementById("resultShow").innerHTML += text;
   }
 });
 
@@ -48,13 +49,12 @@ document.getElementById("rectangleBtn").addEventListener("click", function () {
       2
     );
 
-    const text = ` <div class="ms-2 me-auto">Triangle</div>
+    const text = `<li class= "list-group-item d-flex justify-content-between align-items-start gap-2"><div class="ms-2 me-auto">Rectangle</div>
                 <div>${rectanglenArea}cm<sup>2</sup></div>
                 <button class="btn btn-primary btn-sm">
                   Convert to m <sup>2</sup>
-                </button>`;
-    li.innerHTML = text;
-    document.getElementById("resultShow").appendChild(li);
+                </button> </li>`;
+    document.getElementById("resultShow").innerHTML += text;
   }
 });
 
@@ -144,4 +144,3 @@ document.getElementById("ellipseBtn").addEventListener("click", function () {
     console.log(ellipseArea);
   }
 });
-
