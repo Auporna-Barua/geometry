@@ -35,19 +35,35 @@ document.getElementById("rectangleBtn").addEventListener("click", function () {
     alert("Input is required, must be a positve number");
   } else {
     const rectanglenArea =  rectangleWidthParse * rectanglenLandParse;
-    console.log(rectanglenArea);
+    // console.log(rectanglenArea);
   }
 
 });
 
 // step-3: Parallelogram value
-document.getElementById("rectangleBtn").addEventListener("click", function () {
-  const ParallelogramBase = document.getElementById("parallelogramBase").value;
-  const ParallelogramHeight = document.getElementById(
-    "parallelogramHeight"
-  ).value;
-  // const ParallelogramBtn = document.getElementById("parallelogramBtn");
-});
+document
+  .getElementById("parallelogramBtn").addEventListener("click", function () {
+    const parallelogramBase = document.getElementById("parallelogramBase").value;
+    const parallelogramBaseParse = parseFloat(parallelogramBase);
+    const parallelogramHeight = document.getElementById(
+      "parallelogramHeight"
+    ).value;
+    const parallelogramHeightParse = parseFloat(parallelogramHeight);
+
+    if (
+      isNaN(parallelogramBaseParse) ||
+      isNaN(parallelogramHeightParse) ||
+      parallelogramBase < 1 ||
+      parallelogramHeight < 1
+    ) {
+      alert("Input is required, must be a positve number");
+    } else {
+      const parallelogramArea =
+        parallelogramBaseParse * parallelogramHeightParse;
+      console.log(parallelogramArea);
+    }
+
+  });
 
 // step-4: Rhombus value
 const RhombusD1 = document.getElementById("rhombusD1").value;
