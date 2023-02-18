@@ -101,12 +101,29 @@ document.getElementById("pentagonBtn").addEventListener("click", function () {
      alert("Input is required, must be a positve number");
    } else {
      const PentagonArea = 0.5 * PentagonPParse * PentagonBParse;
-     console.log(PentagonArea);
+    //  console.log(PentagonArea);
   }
   
 });
 
 // step-6: Ellipse value
-const EllipseA = document.getElementById("ellipseA").value;
-const EllipseB = document.getElementById("ellipseB").value;
-const EllipseBtn = document.getElementById("ellipseBtn");
+document.getElementById("ellipseBtn").addEventListener("click", function () {
+  const ellipseA = document.getElementById("ellipseA").value;
+  const ellipseAParse = parseFloat(ellipseA);
+  const ellipseB = document.getElementById("ellipseB").value;
+  const ellipseBParse = parseFloat(ellipseB);
+
+  
+   if (
+     isNaN(ellipseAParse) ||
+     isNaN(ellipseBParse) ||
+     ellipseA < 1 ||
+     ellipseB < 1
+   ) {
+     alert("Input is required, must be a positve number");
+   } else {
+     const ellipseArea = 3.1416 * ellipseAParse * ellipseBParse;
+      console.log(ellipseArea);
+   }
+ 
+});
