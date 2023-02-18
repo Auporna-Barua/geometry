@@ -80,15 +80,31 @@ document.getElementById("rhombusBtn").addEventListener("click", function () {
     alert("Input is required, must be a positve number");
   } else {
     const rhombusArea = 0.5 * rhombusD1Parse * rhombusD2Parse;
-    console.log(rhombusArea);
+    // console.log(rhombusArea);
   }
-  
+
 });
 
 // step-5: Pentagon value
-const PentagonP = document.getElementById("pentagonP").value;
-const PentagonB = document.getElementById("pentagonB").value;
-const PentagonBtn = document.getElementById("pentagonBtn");
+document.getElementById("pentagonBtn").addEventListener("click", function () {
+  const PentagonP = document.getElementById("pentagonP").value;
+   const PentagonPParse = parseFloat(PentagonP);
+  const PentagonB = document.getElementById("pentagonB").value;
+  const PentagonBParse = parseFloat(PentagonB);
+
+   if (
+     isNaN(PentagonPParse) ||
+     isNaN(PentagonBParse) ||
+     PentagonP < 1 ||
+     PentagonB < 1
+   ) {
+     alert("Input is required, must be a positve number");
+   } else {
+     const PentagonArea = 0.5 * PentagonPParse * PentagonBParse;
+     console.log(PentagonArea);
+  }
+  
+});
 
 // step-6: Ellipse value
 const EllipseA = document.getElementById("ellipseA").value;
